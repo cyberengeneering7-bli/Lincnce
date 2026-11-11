@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09090b">
+    <meta name="description" content="Official Open Source Licensing and Attribution page for ZUNO Music Project.">
+    <title>ZUNO | Open Source License & Attribution</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#ff6a3d',
+                            coral: '#ff4d64',
+                            rose: '#f43f5e',
+                            crimson: '#e11d48'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3f3f46;
+        }
+
+        /* Ambient Glow & Logo Animation */
+        .zuno-gradient-bg {
+            background: linear-gradient(135deg, #ff7a45 0%, #ff4d64 50%, #e82c68 100%);
+        }
+        .zuno-glow {
+            box-shadow: 0 0 50px -10px rgba(255, 90, 80, 0.45);
+        }
+    </style>
+</head>
+<body class="bg-[#09090b] text-zinc-100 font-sans antialiased selection:bg-rose-500/30 selection:text-orange-300 min-h-screen flex flex-col justify-between relative overflow-x-hidden">
+
+    <!-- Blurred Ambient Logo Backdrop Layers -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-20">
+        <!-- Giant top-center ambient aura matching logo gradient -->
+        <div class="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[650px] sm:w-[900px] h-[550px] bg-gradient-to-br from-[#ff7a45]/30 via-[#ff4d64]/25 to-[#e82c68]/20 rounded-full blur-[140px] opacity-70"></div>
+        <!-- Secondary soft right glow -->
+        <div class="absolute top-[25%] -right-28 w-[400px] h-[400px] bg-gradient-to-tr from-[#ff5733]/15 to-[#e11d48]/20 rounded-full blur-[120px] opacity-50"></div>
+        <!-- Secondary soft left glow -->
+        <div class="absolute top-[50%] -left-28 w-[400px] h-[400px] bg-gradient-to-br from-[#e82c68]/15 to-[#ff7a45]/15 rounded-full blur-[130px] opacity-50"></div>
+    </div>
+
+    <!-- Main Wrapper -->
+    <div class="w-full max-w-4xl mx-auto px-4 py-8 sm:py-14 space-y-6">
+
+        <!-- Top Navigation / Pill Bar -->
+        <header class="flex items-center justify-between py-2 border-b border-zinc-800/80 mb-6">
+            <div class="flex items-center space-x-3">
+                <!-- Mini Logo Icon -->
+                <div class="w-8 h-8 rounded-xl zuno-gradient-bg flex items-center justify-center shadow-lg shadow-rose-500/25 p-1">
+                    <svg class="w-full h-full text-white" viewBox="0 0 100 100" fill="currentColor">
+                        <path d="M 23 25 L 77 25 L 77 36.5 L 43.5 63.5 L 77 63.5 L 77 75 L 23 75 L 23 63.5 L 56.5 36.5 L 23 36.5 Z"/>
+                    </svg>
+                </div>
+                <span class="font-extrabold tracking-wider text-sm uppercase text-white">ZUNO <span class="text-xs text-rose-400 font-bold ml-1">CORE</span></span>
+            </div>
+            <a href="https://github.com/sheikhazim10000-ctrl" target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-300 hover:text-white transition-all duration-200 bg-zinc-900/90 hover:bg-zinc-800 px-3.5 py-1.5 rounded-full border border-zinc-700/80 hover:border-rose-500/40 shadow-sm">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>GitHub Profile</span>
+                <span class="text-rose-400">↗</span>
+            </a>
+        </header>
+
+        <!-- Hero Card -->
+        <section class="relative bg-zinc-900/70 backdrop-blur-2xl border border-zinc-800/90 rounded-3xl p-7 sm:p-11 text-center shadow-2xl overflow-hidden">
+            <!-- Subtle back-light inside card -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-36 bg-gradient-to-r from-orange-500/20 via-rose-500/20 to-pink-500/10 blur-2xl pointer-events-none"></div>
+
+            <!-- Central Brand Logo with Ambient Glow -->
+            <div class="relative group mx-auto w-24 h-24 sm:w-28 sm:h-28 mb-6">
+                <!-- Blurred Glow halo behind the logo -->
+                <div class="absolute inset-0 zuno-gradient-bg rounded-[26px] blur-xl opacity-75 group-hover:opacity-100 transition duration-300 transform scale-95 group-hover:scale-105"></div>
+                
+                <!-- Main Logo Container -->
+                <div class="relative w-full h-full rounded-[24px] zuno-gradient-bg flex items-center justify-center p-4 shadow-2xl transition-all duration-300 transform group-hover:scale-105 border border-white/20">
+                    <svg class="w-full h-full text-white drop-shadow-md" viewBox="0 0 100 100" fill="currentColor">
+                        <!-- Precision 'Z' Logo Mark -->
+                        <path d="M 23 25 L 77 25 L 77 36.5 L 43.5 63.5 L 77 63.5 L 77 75 L 23 75 L 23 63.5 L 56.5 36.5 L 23 36.5 Z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-white mb-2">
+                ZUNO
+            </h1>
+            <p class="text-zinc-300 text-sm sm:text-base font-medium max-w-lg mx-auto">
+                Next-Generation Open-Source Music Experience & Streaming Platform
+            </p>
+
+            <!-- Badges Row -->
+            <div class="flex flex-wrap items-center justify-center gap-2.5 mt-6">
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-orange-500/15 text-orange-300 border border-orange-500/30 shadow-sm">
+                    <span class="text-sm">🇮🇳</span>
+                    Made in India
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-rose-500/15 text-rose-300 border border-rose-500/30 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-rose-400 animate-pulse"></span>
+                    GNU GPL v3.0
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-zinc-800/90 text-zinc-200 border border-zinc-700/80">
+                    Open Source
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-zinc-800/90 text-zinc-300 border border-zinc-700/80">
+                    SPDX: GPL-3.0-only
+                </span>
+            </div>
+        </section>
+
+        <!-- Information Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+            <!-- About ZUNO Card -->
+            <article class="bg-zinc-900/60 backdrop-blur-xl border border-zinc-800/90 hover:border-orange-500/30 rounded-2xl p-6 transition duration-300 shadow-lg">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 font-bold">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-lg font-bold text-white tracking-wide">About Project</h2>
+                </div>
+                <p class="text-zinc-300 text-sm leading-relaxed mb-3">
+                    <strong class="text-white font-bold">ZUNO</strong> is a free and open-source music project tailored to deliver high-quality audio playback, lightning-fast streaming, and an uncluttered user interface.
+                </p>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    Developed and maintained with passion by <strong class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-rose-400 to-pink-400 font-extrabold tracking-wide">SALMAN DEVELOPER</strong> from India with modern architectural updates.
+                </p>
+            </article>
+
+            <!-- Developer Card -->
+            <article class="bg-zinc-900/60 backdrop-blur-xl border border-zinc-800/90 hover:border-rose-500/30 rounded-2xl p-6 transition duration-300 shadow-lg flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between gap-3 mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                </svg>
+                            </div>
+                            <h2 class="text-lg font-bold text-white tracking-wide">Developer & Maintainer</h2>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-orange-500/10 text-orange-400 border border-orange-500/30">
+                            <span>🇮🇳</span> India
+                        </span>
+                    </div>
+                    <p class="text-xl font-black text-white tracking-wider mb-1">SALMAN DEVELOPER</p>
+                    <p class="text-zinc-400 text-sm mb-4 font-medium">Lead Developer & Open-Source Maintainer • India</p>
+                </div>
+                <div>
+                    <a href="https://github.com/sheikhazim10000-ctrl" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 text-sm font-bold text-orange-400 hover:text-rose-400 transition-colors group">
+                        <span>Visit Official GitHub Profile</span>
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Attribution & Upstream Foundation Card -->
+        <section class="bg-zinc-900/60 backdrop-blur-xl border border-zinc-800/90 rounded-2xl p-6 sm:p-7">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </div>
+                <h2 class="text-lg font-bold text-white tracking-wide">Upstream Foundations & Credits</h2>
+            </div>
+            <p class="text-zinc-300 text-sm leading-relaxed mb-4">
+                ZUNO is built with deep gratitude to the broader free software ecosystem. This project incorporates concepts, architecture, and codebases inspired by and based upon the open-source project <span class="text-white font-bold">Metrolist</span> and other community-contributed audio tools.
+            </p>
+            <div class="bg-zinc-950/80 border border-zinc-800/90 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                <div class="space-y-1">
+                    <span class="text-xs font-mono text-rose-400 uppercase tracking-wider font-bold">Attribution</span>
+                    <p class="text-sm text-zinc-200 font-bold">Metrolist & Open Source Contributors</p>
+                    <p class="text-xs text-zinc-400">All original authors retain copyright and intellectual credit for their respective contributions.</p>
+                </div>
+                <span class="inline-flex text-xs px-3 py-1 rounded-md bg-zinc-800/90 text-zinc-300 font-mono font-semibold border border-zinc-700">Respective Credits</span>
+            </div>
+        </section>
+
+        <!-- License Deep Dive & Terms -->
+        <section class="bg-zinc-900/60 backdrop-blur-xl border border-zinc-800/90 rounded-2xl p-6 sm:p-7 space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800/80 pb-5">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400">
+                        <!-- Scale / Legal Icon -->
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-white tracking-wide">GNU General Public License v3.0</h2>
+                        <p class="text-xs text-zinc-400 font-mono">SPDX-License-Identifier: GPL-3.0-only</p>
+                    </div>
+                </div>
+                <a href="https://www.gnu.org/licenses/gpl-3.0.txt" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-orange-500/20 to-rose-500/20 text-orange-300 hover:text-white border border-rose-500/30 hover:border-orange-500/50 transition duration-200">
+                    <span>Official GNU Text</span>
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Permissions / Conditions / Limitations Summary Badges -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <!-- Permissions -->
+                <div class="bg-zinc-950/70 border border-zinc-800/90 rounded-xl p-4">
+                    <div class="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2.5">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        Permissions
+                    </div>
+                    <ul class="text-xs text-zinc-300 space-y-1.5 font-medium">
+                        <li class="flex items-center gap-1.5"><span class="text-emerald-500">•</span> Commercial use</li>
+                        <li class="flex items-center gap-1.5"><span class="text-emerald-500">•</span> Modification</li>
+                        <li class="flex items-center gap-1.5"><span class="text-emerald-500">•</span> Distribution</li>
+                        <li class="flex items-center gap-1.5"><span class="text-emerald-500">•</span> Patent use & Private study</li>
+                    </ul>
+                </div>
+
+                <!-- Conditions -->
+                <div class="bg-zinc-950/70 border border-zinc-800/90 rounded-xl p-4">
+                    <div class="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider mb-2.5">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                        Conditions
+                    </div>
+                    <ul class="text-xs text-zinc-300 space-y-1.5 font-medium">
+                        <li class="flex items-center gap-1.5"><span class="text-amber-500">•</span> Disclose source code</li>
+                        <li class="flex items-center gap-1.5"><span class="text-amber-500">•</span> License & copyright notice</li>
+                        <li class="flex items-center gap-1.5"><span class="text-amber-500">•</span> Same license (Copyleft)</li>
+                        <li class="flex items-center gap-1.5"><span class="text-amber-500">•</span> Document modifications</li>
+                    </ul>
+                </div>
+
+                <!-- Limitations -->
+                <div class="bg-zinc-950/70 border border-zinc-800/90 rounded-xl p-4">
+                    <div class="flex items-center gap-2 text-rose-400 text-xs font-bold uppercase tracking-wider mb-2.5">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+                        Limitations
+                    </div>
+                    <ul class="text-xs text-zinc-300 space-y-1.5 font-medium">
+                        <li class="flex items-center gap-1.5"><span class="text-rose-500">•</span> No liability</li>
+                        <li class="flex items-center gap-1.5"><span class="text-rose-500">•</span> No warranty</li>
+                        <li class="flex items-center gap-1.5"><span class="text-rose-500">•</span> No trademark rights</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Full GNU General Public License v3 Document Viewer -->
+            <div class="bg-zinc-950 border border-zinc-800/90 rounded-2xl overflow-hidden shadow-2xl">
+                <div class="flex items-center justify-between px-5 py-3.5 bg-zinc-900/90 border-b border-zinc-800">
+                    <div class="flex items-center gap-2.5">
+                        <div class="flex gap-1.5">
+                            <span class="w-3 h-3 rounded-full bg-rose-500 inline-block shadow-sm"></span>
+                            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block shadow-sm"></span>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block shadow-sm"></span>
+                        </div>
+                        <span class="text-xs font-mono font-bold text-zinc-200 ml-2">LICENSE — GNU GENERAL PUBLIC LICENSE v3.0</span>
+                    </div>
+                    <button onclick="copyFullLicense()" class="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-200 hover:text-white px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 transition border border-zinc-700 hover:border-orange-500/40">
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                        </svg>
+                        <span id="fullCopyLabel">Copy Full License</span>
+                    </button>
+                </div>
+                <div class="p-5 font-mono text-[11px] sm:text-xs text-zinc-300 max-h-96 overflow-y-auto leading-relaxed whitespace-pre-wrap select-text bg-[#070709]" id="fullGplText">
+price.  Our General Public Licenses are designed to make sure that you
+have the freedom to distribute copies of free software (and charge for
+them if you wish), that you receive source code or can get it if you
+want it, that you can change the software or use pieces of it in new
+free programs, and that you know you can do these things.
+
+  To protect your rights, we need to prevent others from denying you
+these rights or asking you to surrender the rights.  Therefore, you have
+certain responsibilities if you distribute copies of the software, or if
+you modify it: responsibilities to respect the freedom of others.
+
+  For example, if you distribute copies of such a program, whether
+gratis or for a fee, you must pass on to the recipients the same
+freedoms that you received.  You must make sure that they, too, receive
+or can get the source code.  And you must show them these terms so they
+know their rights.
+
+  Developers that use the GNU GPL protect your rights with two steps:
+(1) assert copyright on the software, and (2) offer you this License
+giving you legal permission to copy, distribute and/or modify it.
+
+  For the developers' and authors' protection, the GPL clearly explains
+that there is no warranty for this free software.  For both users' and
+authors' sake, the GPL requires that modified versions be marked as
+changed, so that their problems will not be attributed erroneously to
+authors of previous versions.
+
+  Some devices are designed to deny users access to install or run
+modified versions of the software inside them, although the manufacturer
+can do so.  This is fundamentally incompatible with the aim of
+protecting users' freedom to change the software.  The systematic
+pattern of such abuse occurs in the area of products for individuals to
+use, which is precisely where it is most unacceptable.  Therefore, we
+have designed this version of the GPL to prohibit the practice for those
+products.  If such problems arise substantially in other domains, we
+stand ready to extend this provision to those domains in future versions
+of the GPL, as needed to protect the freedom of users.
+
+  Finally, every program is threatened constantly by software patents.
+States should not allow patents to restrict development and use of
+software on general-purpose computers, but in those that do, we wish to
+avoid the special danger that patents applied to a free program could
+make it effectively proprietary.  To prevent this, the GPL assures that
+patents cannot be used to render the program non-free.
+
+  The precise terms and conditions for copying, distribution and
+modification follow.
+
+                       TERMS AND CONDITIONS
+
+  0. Definitions.
+
+  "This License" refers to version 3 of the GNU General Public License.
+
+  "Copyright" also means copyright-like laws that apply to other kinds of
+works, such as semiconductor masks.
+
+  "The Program" refers to any copyrightable work licensed under this
+License.  Each licensee is addressed as "you".  "Licensees" and
+"recipients" may be individuals or organizations.
+
+  To "modify" a work means to copy from or adapt all or part of the work
+in a fashion requiring copyright permission, other than the making of an
+exact copy.  The resulting work is called a "modified version" of the
+earlier work or a work "based on" the earlier work.
+
+  A "covered work" means either the unmodified Program or a work based
+on the Program.
+
+  To "propagate" a work means to do anything with it that, without
+permission, would make you directly or secondarily liable for
+infringement under applicable copyright law, except executing it on a
+computer or modifying a private copy.  Propagation includes copying,
+distribution (with or without modification), making available to the
+public, and in some countries other activities as well.
+
+  To "convey" a work means any kind of propagation that enables other
+parties to make or receive copies.  Mere interaction with a user through
+a computer network, with no transfer of a copy, is not conveying.
+
+  An interactive user interface displays "Appropriate Legal Notices"
+to the extent that it includes a convenient and prominently visible
+feature that (1) displays an appropriate copyright notice, and (2)
+tells the user that there is no warranty for the work (except to the
+extent that warranties are provided), that licensees may convey the
+work under this License, and how to view a copy of this License.  If
+the interface presents a list of user commands or options, such as a
+menu, a prominent item in the list meets this criterion.
+
+  1. Source Code.
+
+  The "source code" for a work means the preferred form of the work
+for making modifications to it.  "Object code" means any non-source
+form of a work.
+
+  A "Standard Interface" means an interface that either is an official
+standard defined by a recognized standards body, or, in the case of
+interfaces specified for a particular programming language, one that
+is widely used among developers working in that language.
+
+  The "System Libraries" of an executable work include anything, other
+than the work as a whole, that (a) is included in the normal form of
+packaging a Major Component, but which is not part of that Major
+Component, and (b) serves only to enable use of the work with that
+Major Component, or to implement a Standard Interface for which an
+implementation is available to the public in source code form.  A
+"Major Component", in this context, means a major essential component
+(kernel, window system, and so on) of the specific operating system
+(if any) on which the executable work runs, or a compiler used to
+produce the work, or an object code interpreter used to run it.
+
+  The "Corresponding Source" for a work in object code form means all
+the source code needed to generate, install, and (for an executable
+work) run the object code and to modify the work, including scripts to
+control those activities.  However, it does not include the work's
+System Libraries, or general-purpose tools or generally available free
+programs which are used unmodified in performing those activities but
+which are not part of the work.  For example, Corresponding Source
+includes interface definition files associated with source files for
+the work, and the source code for shared libraries and dynamically
+linked subprograms that the work is specifically designed to require,
+such as by intimate data communication or control flow between those
+subprograms and other parts of the work.
+
+  The Corresponding Source need not include anything that users
+can regenerate automatically from other parts of the Corresponding
+Source.
+
+  The Corresponding Source for a work in source code form is that
+same work.
+
+  2. Basic Permissions.
+
+  All rights granted under this License are granted for the term of
+copyright on the Program, and are irrevocable provided the stated
+conditions are met.  This License explicitly affirms your unlimited
+permission to run the unmodified Program.  The output from running a
+covered work is covered by this License only if the output, given its
+content, constitutes a covered work.  This License acknowledges your
+rights of fair use or other equivalent, as provided by copyright law.
+
+  You may make, run and propagate covered works that you do not
+convey, without conditions so long as your license otherwise remains
+in force.  You may convey covered works to others for the sole purpose
+of having them make modifications exclusively for you, or provide you
+with facilities for running those works, provided that you comply with
+the terms of this License in conveying all material for which you do
+not control copyright.  Those thus making or running the covered works
+for you must do so exclusively on your behalf, under your direction
+and control, on terms that prohibit them from making any copies of
+your copyrighted material outside their relationship with you.
+
+  Conveying under any other circumstances is permitted solely under
+the conditions stated below.  Sublicensing is not allowed; section 10
+makes it unnecessary.
+
+  3. Protecting Users' Legal Rights From Anti-Circumvention Law.
+
+  No covered work shall be deemed part of an effective technological
+measure under any applicable law fulfilling obligations under article
+11 of the WIPO copyright treaty adopted on 20 December 1996, or
+similar laws prohibiting or restricting circumvention of such
+measures.
+
+  When you convey a covered work, you waive any legal power to forbid
+circumvention of technological measures to the extent such circumvention
+is effected by exercising rights under this License with respect to
+the covered work, and you disclaim any intention to limit operation or
+modification of the work as a means of enforcing, against the work's
+users, your or third parties' legal rights to forbid circumvention of
+technological measures.
+
+  4. Conveying Verbatim Copies.
+
+  You may convey verbatim copies of the Program's source code as you
+receive it, in any medium, provided that you conspicuously and
+appropriately publish on each copy an appropriate copyright notice;
+keep intact all notices stating that this License and any
+non-permissive terms added in accord with section 7 apply to the code;
+keep intact all notices of the absence of any warranty; and give all
+recipients a copy of this License along with the Program.
+
+  You may charge any price or no price for each copy that you convey,
+and you may offer support or warranty protection for a fee.
+
+  5. Conveying Modified Source Versions.
+
+  You may convey a work based on the Program, or the modifications to
+produce it from the Program, in the form of source code under the
+terms of section 4, provided that you also meet all of these conditions:
+
+    a) The work must carry prominent notices stating that you modified
+    it, and giving a relevant date.
+
+    b) The work must carry prominent notices stating that it is
+    released under this License and any conditions added under section
+    7.  This requirement modifies the requirement in section 4 to
+    "keep intact all notices".
+
+    c) You must license the entire work, as a whole, under this
+    License to anyone who comes into possession of a copy.  This
+    License will therefore apply, along with any applicable section 7
+    additional terms, to the whole of the work, and all its parts,
+    regardless of how they are packaged.  This License gives no
+    permission to license the work in any other way, but it does not
+    invalidate such permission if you have separately received it.
+
+    d) If the work has interactive user interfaces, each must display
+    Appropriate Legal Notices; however, if the Program has interactive
+    interfaces that do not display Appropriate Legal Notices, your
+    work need not make them do so.
+
+  A compilation of a covered work with other separate and independent
+works, which are not by their nature extensions of the covered work,
+and which are not combined with it such as to form a larger program,
+in or on a volume of a storage or distribution medium, is called an
+"aggregate" if the compilation and its resulting copyright are not
+used to limit the access or legal rights of the compilation's users
+beyond what the individual works permit.  Inclusion of a covered work
+in an aggregate does not cause this License to apply to the other
+parts of the aggregate.
+
+  6. Conveying Non-Source Forms.
+
+  You may convey a covered work in object code form under the terms
+of sections 4 and 5, provided that you also convey the
+machine-readable Corresponding Source under the terms of this License,
+in one of these ways:
+
+    a) Convey the object code in, or embodied in, a physical product
+    (including a physical distribution medium), accompanied by the
+    Corresponding Source fixed on a durable physical medium
+    customarily used for software interchange.
+
+    b) Convey the object code in, or embodied in, a physical product
+    (including a physical distribution medium), accompanied by a
+    written offer, valid for at least three years and valid for as
+    long as you offer spare parts or customer support for that product
+    model, to give anyone who possesses the object code either (1) a
+    copy of the Corresponding Source for all the software in the
+    product that is covered by this License, on a durable physical
+    medium customarily used for software interchange, for a price no
+    more than your reasonable cost of physically performing this
+    conveying of source, or (2) access to copy the
+    Corresponding Source from a network server at no charge.
+
+    c) Convey individual copies of the object code with a copy of the
+    written offer to provide the Corresponding Source.  This
+    alternative is allowed only occasionally and noncommercially, and
+    only if you received the object code with such an offer, in accord
+    with subsection 6b.
+
+    d) Convey the object code by offering access from a designated
+    place (gratis or for a charge), and offer equivalent access to the
+    Corresponding Source in the same way through the same place at no
+    further charge.  You need not require recipients to copy the
+    Corresponding Source along with the object code.  If the place to
+    copy the object code is a network server, the Corresponding Source
+    may be on a different server (operated by you or a third party)
+    that supports equivalent copying facilities, provided you maintain
+    clear directions next to the object code saying where to find the
+    Corresponding Source.  Regardless of what server hosts the
+    Corresponding Source, you remain obligated to ensure that it is
+    available for as long as needed to satisfy these requirements.
+
+    e) Convey the object code using peer-to-peer transmission, provided
+    you inform other peers where the object code and Corresponding
+    Source of the work are being offered to the general public at no
+    charge under subsection 6d.
+
+  7. Additional Terms.
+
+  "Additional permissions" are terms that supplement the terms of this
+License by making exceptions from one or more of its conditions.
+Additional permissions that are applicable to the entire Program shall
+be treated as though they were included in this License, to the extent
+that they are valid under applicable law.  If additional permissions
+apply only to part of the Program, that part may be used separately
+under those permissions, but the entire Program remains governed by
+this License without regard to the additional permissions.
+
+  When you convey a copy of a covered work, you may at your option
+remove any additional permissions from that copy, or from any part of
+it.  (Additional permissions may be written to require their own
+removal in certain cases when you modify the work.)  You may place
+additional permissions on material, added by you to a covered work,
+for which you have or can give appropriate copyright permission.
+
+  Notwithstanding any other provision of this License, for material you
+add to a covered work, you may (if authorized by the copyright holders of
+that material) supplement the terms of this License with terms:
+
+    a) Disclaiming warranty or limiting liability differently from the
+    terms of sections 15 and 16 of this License; or
+
+    b) Requiring preservation of specified reasonable legal notices or
+    author attributions in that material or in the Appropriate Legal
+    Notices displayed by works containing it; or
+
+    c) Prohibiting misrepresentation of the origin of that material, or
+    requiring that modified versions of such material be marked in
+    reasonable ways as different from the original version; or
+
+    d) Limiting the use for publicity purposes of names of licensors or
+    authors of the material; or
+
+    e) Declining to grant rights under trademark law for use of some
+    trade names, trademarks, or service marks; or
+
+    f) Requiring indemnification of licensors and authors of that
+    material by anyone who conveys the material (or modified versions of
+    it) with contractual assumptions of liability to the recipient, for
+    any liability that these contractual assumptions directly impose on
+    those licensors and authors.
+
+  END OF TERMS AND CONDITIONS</div>
+            </div>
+
+            <!-- Code/Notice Block with Copy Utility -->
+            <div class="relative bg-zinc-950 border border-zinc-800/90 rounded-xl p-4 font-mono text-xs">
+                <div class="flex items-center justify-between text-zinc-400 pb-3 mb-3 border-b border-zinc-800/70">
+                    <span class="text-zinc-400 flex items-center gap-1.5 font-bold">
+                        <span class="w-2 h-2 rounded-full bg-rose-500 inline-block"></span>
+                        gpl-3.0-header.txt
+                    </span>
+                    <button id="copyBtn" onclick="copyLicenseNotice()" class="inline-flex items-center gap-1.5 text-zinc-300 hover:text-white px-3 py-1 rounded bg-zinc-900 hover:bg-zinc-800 transition duration-150 border border-zinc-700/80 hover:border-orange-500/40 font-bold">
+                        <svg id="copyIcon" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                        </svg>
+                        <span id="copyText">Copy Notice</span>
+                    </button>
+                </div>
+                <pre id="licenseNoticeText" class="text-zinc-300 leading-relaxed overflow-x-auto whitespace-pre-wrap font-medium">ZUNO — Free & Open Source Music Project
+Copyright (C) 2026 SALMAN DEVELOPER (India) & Open Source Contributors.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.</pre>
+            </div>
+        </section>
+
+        <!-- Warranty Disclaimer (Legal Notice) -->
+        <section class="bg-zinc-900/60 backdrop-blur-xl border border-zinc-800/90 rounded-2xl p-6 sm:p-7">
+            <h2 class="text-base font-bold text-zinc-100 mb-3 flex items-center gap-2">
+                <svg class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Disclaimer of Warranty
+            </h2>
+            <div class="text-zinc-300 text-xs sm:text-sm leading-relaxed space-y-2">
+                <p>
+                    THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+                </p>
+                <p class="text-zinc-400 text-xs">
+                    Original copyright notices and license provisions remain active and applicable to all respective code authors and contributors.
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pt-8 pb-4 text-center border-t border-zinc-900">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 mb-3 rounded-full bg-zinc-900/90 border border-zinc-800 text-xs font-bold text-zinc-200 shadow-sm">
+                <span>🇮🇳</span>
+                <span>Proudly Made in India</span>
+            </div>
+            <p class="text-xs text-zinc-300 font-semibold">
+                © 2026 <span class="text-white font-black tracking-wide">ZUNO Project</span> • Built & Maintained by <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-rose-400 to-pink-400 font-black tracking-wider">SALMAN DEVELOPER</span> (India)
+            </p>
+            <p class="text-[11px] text-zinc-500 mt-1 font-medium">
+                Licensed under the GNU General Public License v3.0 • Free & Open Source Software
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- Notification Toast Container -->
+    <div id="toast" class="fixed bottom-6 right-6 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-zinc-900 text-zinc-100 border border-zinc-700 px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 text-xs font-bold z-50">
+        <svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+        </svg>
+        <span id="toastMessage">License notice copied to clipboard!</span>
+    </div>
+
+    <!-- Interactive Script -->
+    <script>
+        function showToast(message) {
+            var toast = document.getElementById('toast');
+            var msg = document.getElementById('toastMessage');
+            if (!toast || !msg) return;
+            msg.innerText = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            
+            setTimeout(function() {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2500);
+        }
+
+        function copyFullLicense() {
+            var textElement = document.getElementById('fullGplText');
+            var label = document.getElementById('fullCopyLabel');
+            if (!textElement) return;
+
+            var tempInput = document.createElement('textarea');
+            tempInput.value = textElement.innerText;
+            tempInput.style.position = 'fixed';
+            tempInput.style.opacity = '0';
+            document.body.appendChild(tempInput);
+            tempInput.select();
+
+            try {
+                var successful = document.execCommand('copy');
+                if (successful) {
+                    if (label) label.innerText = "Copied!";
+                    showToast("Full GNU GPL v3.0 license text copied!");
+                    setTimeout(function() {
+                        if (label) label.innerText = "Copy Full License";
+                    }, 2000);
+                }
+            } catch (err) {
+                console.error('Copy command failed', err);
+            } finally {
+                document.body.removeChild(tempInput);
+            }
+        }
+
+        function copyLicenseNotice() {
+            var textElement = document.getElementById('licenseNoticeText');
+            var copyText = document.getElementById('copyText');
+            if (!textElement) return;
+
+            // Safe iframe copy execution using temporary textarea
+            var tempInput = document.createElement('textarea');
+            tempInput.value = textElement.innerText;
+            tempInput.style.position = 'fixed';
+            tempInput.style.opacity = '0';
+            document.body.appendChild(tempInput);
+            tempInput.select();
+
+            try {
+                var successful = document.execCommand('copy');
+                if (successful) {
+                    if (copyText) copyText.innerText = "Copied!";
+                    showToast("License notice copied to clipboard!");
+                    setTimeout(function() {
+                        if (copyText) copyText.innerText = "Copy Notice";
+                    }, 2000);
+                }
+            } catch (err) {
+                console.error('Copy command failed', err);
+            } finally {
+                document.body.removeChild(tempInput);
+            }
+        }
+    </script>
+</body>
+</html>
